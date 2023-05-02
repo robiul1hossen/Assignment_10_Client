@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import { FaThumbsUp } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const SingleCard = ({ card }) => {
   const { id, name, image_url, experience, recipes, likes } = card;
@@ -14,16 +15,16 @@ const SingleCard = ({ card }) => {
             Some quick example text to build on the card title and make up the bulk of the card's content.
           </Card.Text>
           <div className="d-flex justify-content-between align-items-center">
-            <p className="bg-success text-white py-1 px-2 rounded-2 fw-semibold">
-              Experience : {experience} Years
-            </p>
-            <p className="bg-success text-white py-1 px-2 rounded-2 fw-semibold">
+            <p className="bg-primary text-white py-1 px-2 rounded-2">Experience : {experience} Years</p>
+            <p className="bg-primary text-white py-1 px-2 rounded-2 d-flex gap-2 align-items-center">
               <FaThumbsUp></FaThumbsUp> {likes}
             </p>
-            <p className="bg-success text-white py-1 px-2 rounded-2 fw-semibold">Recipes: {recipes}</p>
+            <p className="bg-primary text-white py-1 px-2 rounded-2">Recipes: {recipes}</p>
           </div>
           <div className="text-center mt-4">
-            <Button variant="primary">View Recipes</Button>
+            <Link to="/recipes">
+              <Button variant="success">View Recipes</Button>
+            </Link>
           </div>
         </Card.Body>
       </Card>

@@ -5,7 +5,10 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Main from "./components/Main/Main";
 import Banner from "./components/Header/Banner/Banner";
-import Cards from "./components/Body/Cards/Cards";
+import Recipes from "./components/Recipes/Recipes";
+import Blogs from "./components/Blogs/Blogs";
+import Login from "./components/Login/Login";
+import Register from "./components/Register/Register";
 
 const router = createBrowserRouter([
   {
@@ -16,10 +19,22 @@ const router = createBrowserRouter([
         path: "/",
         element: <Banner></Banner>,
       },
-      // {
-      //   path: "/",
-      //   element: <Cards></Cards>,
-      // },
+      {
+        path: "/recipes",
+        element: <Recipes></Recipes>,
+      },
+      {
+        path: "/blogs",
+        element: <Blogs></Blogs>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
     ],
   },
 ]);

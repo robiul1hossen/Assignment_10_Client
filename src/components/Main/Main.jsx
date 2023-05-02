@@ -1,10 +1,13 @@
 import React from "react";
-import { Button } from "react-bootstrap";
+import Navbar from "../Header/Navbar/HeaderMenu";
+import HeaderMenu from "../Header/Navbar/HeaderMenu";
+import { Outlet } from "react-router-dom";
 
 const Main = () => {
   return (
     <div>
-      <Button variant="primary">Primary</Button>
+      <HeaderMenu></HeaderMenu>
+      <Outlet></Outlet>
     </div>
   );
 };

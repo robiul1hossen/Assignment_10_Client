@@ -11,21 +11,22 @@ const SingleCard = ({ card }) => {
         <Card.Img variant="top" src={image_url} />
         <Card.Body>
           <Card.Title>Chef Name : {name}</Card.Title>
+          <h5>{experience} Years of Experience</h5>
           <Card.Text>
             Some quick example text to build on the card title and make up the bulk of the card's content.
           </Card.Text>
           <div className="d-flex justify-content-between align-items-center">
-            <p className="bg-primary text-white py-1 px-2 rounded-2">Experience : {experience} Years</p>
-            <p className="bg-primary text-white py-1 px-2 rounded-2 d-flex gap-2 align-items-center">
+            <p className="bg-primary text-white py-1 px-2 mt-1 rounded-2 d-flex gap-2 align-items-center">
               <FaThumbsUp></FaThumbsUp> {likes}
             </p>
-            <p className="bg-primary text-white py-1 px-2 rounded-2">Recipes: {recipes}</p>
-          </div>
-          <div className="text-center mt-4">
-            <Link to="/recipes">
-              <Button variant="success">View Recipes</Button>
+            <p className="bg-primary text-white py-1 px-2 mt-1 rounded-2">Recipes: {recipes}</p>
+            <Link to={`/recipe/${id}`}>
+              <Button className="" variant="success">
+                View Recipes
+              </Button>
             </Link>
           </div>
+          <div className="text-center mt-4"></div>
         </Card.Body>
       </Card>
     </Container>

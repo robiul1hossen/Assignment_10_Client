@@ -1,9 +1,8 @@
 import React from "react";
-import Navbar from "../Header/Navbar/HeaderMenu";
-import HeaderMenu from "../Header/Navbar/HeaderMenu";
+import HeaderMenu from "../../Header/Navbar/HeaderMenu";
 import { Outlet } from "react-router-dom";
 
-const Main = () => {
+const RecipeLayout = () => {
   return (
     <div>
       <HeaderMenu></HeaderMenu>
@@ -12,4 +11,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default RecipeLayout;

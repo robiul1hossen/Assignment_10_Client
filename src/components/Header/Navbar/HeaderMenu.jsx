@@ -5,7 +5,13 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 const HeaderMenu = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logout } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    logout()
+      .then()
+      .catch((error) => console.log(error));
+  };
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className="position-relative">
@@ -25,7 +31,7 @@ const HeaderMenu = () => {
             </span>
             <span>
               {user ? (
-                <Button>Logout</Button>
+                <Button onClick={handleLogout}>Logout</Button>
               ) : (
                 <Link to="/login">
                   <Button>Login</Button>

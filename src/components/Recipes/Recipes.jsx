@@ -7,7 +7,6 @@ const Recipes = () => {
   const recipeData = useLoaderData();
   const { id, name, image_url, experience, recipes, likes, recipe1, recipe2, recipe3, recipe4, description } =
     recipeData;
-  console.log(recipe1);
 
   return (
     <Container className="my-5">
@@ -29,8 +28,8 @@ const Recipes = () => {
         <Card.Body>
           <Card.Text>
             <h4>Item-1 : {recipe1?.food_name}</h4>
-            {recipe1?.ingredients.map((ingredient) => (
-              <li>{ingredient}</li>
+            {recipe1?.ingredients.map((ingredient, i) => (
+              <li key={i}>{ingredient}</li>
             ))}
             <b>Instructions</b> :{recipe1?.instructions}
             <Button>Rating</Button>
@@ -38,8 +37,8 @@ const Recipes = () => {
           </Card.Text>
           <Card.Text>
             <h4>Item-2 : {recipe2.food_name}</h4>
-            {recipe2?.ingredients.map((ingredient) => (
-              <li>{ingredient}</li>
+            {recipe2?.ingredients.map((ingredient, i) => (
+              <li key={i}>{ingredient}</li>
             ))}
             <b>Instructions</b> :{recipe2?.instructions}
             <Button>Rating</Button>
@@ -47,8 +46,8 @@ const Recipes = () => {
           </Card.Text>
           <Card.Text>
             <h4>Item-3 : {recipe3?.food_name}</h4>
-            {recipe3?.ingredients.map((ingredient) => (
-              <li>{ingredient}</li>
+            {recipe3?.ingredients.map((ingredient, i) => (
+              <li key={i}>{ingredient}</li>
             ))}
             <b>Instructions</b> :{recipe3?.instructions}
             <Button>Rating</Button>
@@ -56,8 +55,8 @@ const Recipes = () => {
           </Card.Text>
           <Card.Text>
             <h4>Item-4 : {recipe4?.food_name}</h4>
-            {recipe4?.ingredients.map((ingredient) => (
-              <li>{ingredient}</li>
+            {recipe4?.ingredients.map((ingredient, i) => (
+              <li key={i}>{ingredient}</li>
             ))}
             <b>Instructions</b> :{recipe4?.instructions}
             <div className="d-flex justify-content-between">

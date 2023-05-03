@@ -24,7 +24,8 @@ const Register = () => {
   };
 
   return (
-    <Container className="w-25 mx-auto">
+    <Container className="w-25 my-5 mx-auto">
+      <h4>Please Register</h4>
       <Form onSubmit={handleRegister}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Name</Form.Label>
@@ -40,6 +41,12 @@ const Register = () => {
           <Form.Label>Password</Form.Label>
           <Form.Control type="password" name="password" required placeholder="Password" />
         </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label>Photo URL </Form.Label>
+          <Form.Control type="text" name="photo" required placeholder="Photo URL" />
+        </Form.Group>
+
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Check type="checkbox" name="accept" label="Accept Our Terms And Conditions" />
         </Form.Group>

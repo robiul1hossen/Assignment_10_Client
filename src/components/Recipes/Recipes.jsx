@@ -20,9 +20,9 @@ const Recipes = () => {
               <FaThumbsUp></FaThumbsUp> {likes}
             </span>
             <span className="fw-bold py-1 px-2 rounded-2">Recipes: {recipes}</span>
-            <p className="my-4">
+            <span className="my-4">
               <b>Descriptions</b> : {description}
-            </p>
+            </span>
           </div>
         </div>
         <Card.Body>
@@ -36,7 +36,7 @@ const Recipes = () => {
             <Button>Favourite</Button>
           </Card.Text>
           <Card.Text>
-            <h4>Item-2 : {recipe2.food_name}</h4>
+            <h4>Item-2 : {recipe2?.food_name}</h4>
             {recipe2?.ingredients.map((ingredient, i) => (
               <li key={i}>{ingredient}</li>
             ))}

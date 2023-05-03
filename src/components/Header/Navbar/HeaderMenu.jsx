@@ -14,31 +14,32 @@ const HeaderMenu = () => {
   };
 
   return (
-    <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className="position-relative">
-      <Container className="position-sticky z-1">
-        <Navbar.Brand href="#home">FOODIFY</Navbar.Brand>
+    <Navbar collapseOnSelect expand="lg" bg="black" variant="black" className=" sticky-top mt-2">
+      <Container className="">
+        <Navbar.Brand className="text-white fw-bold">FOODIFY</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Link className="me-3" to="/">
+            <Link className="ms-5 text-white text-decoration-none fw-semibold" to="/">
               Home
             </Link>
-            <Link to="blogs">Blog</Link>
+            <Link className="ms-3 text-white text-decoration-none fw-semibold" to="blogs">
+              Blog
+            </Link>
           </Nav>
-          <Nav>
-            <span className="me-3">
-              {user ? user.displayName : <>{<FaUserCircle className="fs-1"></FaUserCircle>}</>}
-            </span>
-            <span>
-              {user ? (
-                <Button onClick={handleLogout}>Logout</Button>
-              ) : (
-                <Link to="/login">
-                  <Button>Login</Button>
-                </Link>
-              )}
-            </span>
-          </Nav>
+
+          <span className="me-3">
+            {user ? user.displayName : <>{<FaUserCircle className="fs-1 text-white"></FaUserCircle>}</>}
+          </span>
+          <span>
+            {user ? (
+              <Button onClick={handleLogout}>Logout</Button>
+            ) : (
+              <Link to="/login">
+                <Button>Login</Button>
+              </Link>
+            )}
+          </span>
         </Navbar.Collapse>
       </Container>
     </Navbar>

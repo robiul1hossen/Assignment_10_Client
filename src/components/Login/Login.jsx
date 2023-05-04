@@ -27,24 +27,6 @@ const Login = () => {
     profilePhoto();
   };
 
-  // handleGoogle()
-  //   .then((result) => {
-  //     const loggedUser = result.user;
-  //     navigate(from, { replace: true });
-  //     console.log(loggedUser);
-  //   })
-  //   .catch((error) => {
-  //     console.log(error);
-  //   });
-
-  // handleGithub()
-  //   .then((result) => {
-  //     const user = result.user;
-  //     navigate(from, { replace: true });
-  //   })
-  //   .catch((error) => {
-  //     console.log(error);
-  //   });
   const googleLogin = () => {
     handleGoogle()
       .then((result) => {

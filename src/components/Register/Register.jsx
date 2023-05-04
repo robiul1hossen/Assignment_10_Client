@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Register = () => {
-  const { createUser, handleGoogle, handleGithub } = useContext(AuthContext);
+  const { createUser, handleGoogle, handleGithub, profilePhoto } = useContext(AuthContext);
 
   const handleRegister = (event) => {
     event.preventDefault();
@@ -13,12 +13,14 @@ const Register = () => {
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
+    const photo = form.photo.value;
     const accept = form.accept.checked;
 
     createUser(email, password)
       .then((result) => {
         const createdUser = result.user;
         console.log(createdUser);
+        profilePhoto(result.user, name, photo);
       })
       .catch((error) => console.log(error));
 

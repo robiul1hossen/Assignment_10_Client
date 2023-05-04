@@ -21,23 +21,20 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const profilePhoto = () => {
-    return updateProfile(auth.currentUser, {
-      displayName: " hello name",
-      photoURL:
-        "https://i.ibb.co/sWb0vCh/female-chef-standing-with-crossed-arms-white-uniform-looking-happy.jpg",
-    })
-      .then((result) => {
-        const logged = result.user;
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
   const createUser = (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
+  };
+
+  const profilePhoto = (user, name, photoURL) => {
+    updateProfile(user, {
+      displayName: name,
+      photoURL: photoURL,
+    })
+      .then(() => console.log("user profile updated"))
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   const loginUser = (email, password) => {

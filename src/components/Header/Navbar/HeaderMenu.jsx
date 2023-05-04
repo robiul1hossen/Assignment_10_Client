@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
-import { FaUserCircle } from "react-icons/fa";
+import "./HeaderMenu.css";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 
@@ -16,7 +16,7 @@ const HeaderMenu = () => {
   const navLinkStyle = ({ isActive }) => {
     return {
       fontWeight: isActive ? "900" : "normal",
-      textDecoration: isActive ? "none" : "underline",
+      textDecoration: isActive ? "underline" : "none",
       color: isActive ? "gray" : "white",
     };
   };
@@ -36,31 +36,34 @@ const HeaderMenu = () => {
             </NavLink>
           </Nav>
 
-          <span className="me-3 text-white ">{user ? user.displayName : <></>}</span>
-          <span>
-            {user ? (
-              <>
-                {
-                  <img
-                    style={{
-                      width: "50px",
-                      height: "50px",
-                      lineHeight: "50px",
-                      borderRadius: "50%",
-                      marginRight: "20px",
-                    }}
-                    src={user.photoURL}
-                    alt=""
-                  />
-                }
-                <Button onClick={handleLogout}>Logout</Button>
-              </>
-            ) : (
-              <Link to="/login">
-                <Button>Login</Button>
-              </Link>
-            )}
-          </span>
+          <div>
+            <span className="me-3 text-white profileName">{user ? user.displayName : <></>}</span>
+            <span>
+              {user ? (
+                <>
+                  {
+                    <img
+                      className="profileImg"
+                      style={{
+                        width: "50px",
+                        height: "50px",
+                        lineHeight: "50px",
+                        borderRadius: "50%",
+                        marginRight: "20px",
+                      }}
+                      src={user.photoURL}
+                      alt=""
+                    />
+                  }
+                  <Button onClick={handleLogout}>Logout</Button>
+                </>
+              ) : (
+                <Link to="/login">
+                  <Button>Login</Button>
+                </Link>
+              )}
+            </span>
+          </div>
         </Navbar.Collapse>
       </Container>
     </Navbar>

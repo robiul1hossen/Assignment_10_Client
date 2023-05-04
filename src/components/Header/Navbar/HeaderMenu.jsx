@@ -36,11 +36,23 @@ const HeaderMenu = () => {
             </NavLink>
           </Nav>
 
-          <span className="me-3">{user ? user.displayName : <></>}</span>
+          <span className="me-3 text-white ">{user ? user.displayName : <></>}</span>
           <span>
             {user ? (
               <>
-                {<FaUserCircle className="fs-1 text-white"></FaUserCircle>}
+                {
+                  <img
+                    style={{
+                      width: "50px",
+                      height: "50px",
+                      lineHeight: "50px",
+                      borderRadius: "50%",
+                      marginRight: "20px",
+                    }}
+                    src={user.photoURL}
+                    alt=""
+                  />
+                }
                 <Button onClick={handleLogout}>Logout</Button>
               </>
             ) : (

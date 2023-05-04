@@ -24,23 +24,47 @@ const Login = () => {
         console.log(loggedUser);
       })
       .catch((error) => console.log(error));
+    profilePhoto();
+  };
 
+  // handleGoogle()
+  //   .then((result) => {
+  //     const loggedUser = result.user;
+  //     navigate(from, { replace: true });
+  //     console.log(loggedUser);
+  //   })
+  //   .catch((error) => {
+  //     console.log(error);
+  //   });
+
+  // handleGithub()
+  //   .then((result) => {
+  //     const user = result.user;
+  //     navigate(from, { replace: true });
+  //   })
+  //   .catch((error) => {
+  //     console.log(error);
+  //   });
+  const googleLogin = () => {
     handleGoogle()
       .then((result) => {
-        const user = result.user;
+        const loggedUser = result.user;
+        navigate(from, { replace: true });
+        console.log(loggedUser);
       })
       .catch((error) => {
         console.log(error);
       });
-
+  };
+  const githubLogin = () => {
     handleGithub()
       .then((result) => {
         const user = result.user;
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error);
       });
-    profilePhoto();
   };
 
   return (
@@ -65,10 +89,10 @@ const Login = () => {
         </Form.Text>
       </Form>
       <div className="mt-4">
-        <Button className="me-3" onClick={handleGoogle}>
+        <Button className="me-3" onClick={googleLogin}>
           Login with Google
         </Button>
-        <Button onClick={handleGithub}>Login with Github</Button>
+        <Button onClick={githubLogin}>Login with Github</Button>
       </div>
     </Container>
   );

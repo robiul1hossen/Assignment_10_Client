@@ -12,6 +12,8 @@ import Register from "./components/Register/Register";
 import AuthProvider from "./providers/AuthProvider";
 import RecipeLayout from "./components/layouts/RecipeLayout/RecipeLayout";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import Error from "./components/Error";
+import Terms from "./components/Terms/Terms";
 
 const router = createBrowserRouter([
   {
@@ -35,8 +37,17 @@ const router = createBrowserRouter([
         path: "/register",
         element: <Register></Register>,
       },
+      {
+        path: "/terms",
+        element: <Terms></Terms>,
+      },
     ],
   },
+  {
+    path: "*",
+    element: <Error></Error>,
+  },
+  ,
   {
     path: "/recipe",
     element: <RecipeLayout></RecipeLayout>,

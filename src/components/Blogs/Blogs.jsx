@@ -6,7 +6,7 @@ const ref = React.createRef();
 
 const blogs = () => {
   return (
-    <Container className="w-50">
+    <Container className="w-50 my-5">
       <div className="App">
         <div ref={ref}>
           <div>

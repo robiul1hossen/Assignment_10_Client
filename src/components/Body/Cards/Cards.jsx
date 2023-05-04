@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import SingleCard from "./SingleCard";
+import "./cards.css";
 
 const Cards = () => {
   const [cards, setCards] = useState([]);
@@ -11,7 +12,7 @@ const Cards = () => {
   }, []);
 
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr" }}>
+    <div className="cardDiv">
       {cards.map((card) => (
         <SingleCard key={card.id} card={card}></SingleCard>
       ))}

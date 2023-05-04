@@ -1,10 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Register = () => {
   const { createUser, handleGoogle, handleGithub, profilePhoto } = useContext(AuthContext);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+  const [disable, setDisable] = useState(false);
 
   const handleRegister = (event) => {
     event.preventDefault();
@@ -21,16 +24,13 @@ const Register = () => {
         const createdUser = result.user;
         console.log(createdUser);
         profilePhoto(result.user, name, photo);
-      })
-      .catch((error) => console.log(error));
-
-    handleGithub()
-      .then((result) => {
-        const user = result.user;
-        navigate(from, { replace: true });
+        setError("");
+        form.reset();
+        setSuccess("user has created successfully");
       })
       .catch((error) => {
-        console.log(error);
+        setError(error);
+        setSuccess("");
       });
   };
 
@@ -59,8 +59,18 @@ const Register = () => {
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" name="accept" label="Accept Our Terms And Conditions" />
+          <Form.Check
+            type="checkbox"
+            name="accept"
+            label={
+              <>
+                Accept <Link to="/terms">Our Terms And Conditions</Link>
+              </>
+            }
+          />
         </Form.Group>
+        <p>{error.message}</p>
+        <p>{success}</p>
         <Button variant="primary" type="submit">
           Register
         </Button>

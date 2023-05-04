@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
-import "./HeaderMenu.css";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 
@@ -17,12 +16,12 @@ const HeaderMenu = () => {
     return {
       fontWeight: isActive ? "900" : "normal",
       textDecoration: isActive ? "underline" : "none",
-      color: isActive ? "gray" : "white",
+      color: isActive ? "black" : "white",
     };
   };
 
   return (
-    <Navbar collapseOnSelect expand="lg" bg="black" variant="black" className=" sticky-top mt-2">
+    <Navbar collapseOnSelect expand="lg" bg="success" variant="success" className=" sticky-top mt-2">
       <Container className="">
         <Navbar.Brand className="text-white fw-bold">FOODIFY</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -31,7 +30,7 @@ const HeaderMenu = () => {
             <NavLink style={navLinkStyle} className="ms-5  " to="/">
               Home
             </NavLink>
-            <NavLink style={navLinkStyle} className="ms-3 " to="blogs">
+            <NavLink style={navLinkStyle} className="ms-3 " to="/blogs">
               Blog
             </NavLink>
           </Nav>

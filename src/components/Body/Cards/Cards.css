@@ -1,0 +1,9 @@
+.cardDiv {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+@media screen and (max-width: 660px) {
+  .cardDiv {
+    grid-template-columns: 1fr;
+  }
+}

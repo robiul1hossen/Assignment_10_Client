@@ -15,11 +15,13 @@ const SingleCard = ({ card }) => {
           <Card.Text>
             Some quick example text to build on the card title and make up the bulk of the card's content.
           </Card.Text>
-          <div className="d-flex justify-content-between align-items-center">
-            <p className="bg-primary text-white py-1 px-2 mt-1 rounded-2 d-flex gap-2 align-items-center">
+          <div className="d-flex flex-column flex-lg-row justify-content-between align-items-center">
+            <p className="bg-primary text-white py-1 px-2 mt-1 rounded-2 d-inline-block">
               <FaThumbsUp></FaThumbsUp> {likes}
             </p>
-            <p className="bg-primary text-white py-1 px-2 mt-1 rounded-2">Recipes: {recipes}</p>
+            <p className="bg-primary d-inline-block text-white py-1 px-2 mt-1 rounded-2">
+              Recipes: {recipes}
+            </p>
             <Link to={`/recipe/${id}`}>
               <Button className="" variant="success">
                 View Recipes

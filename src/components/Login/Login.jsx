@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
@@ -7,6 +7,7 @@ const Login = () => {
   const { loginUser, handleGoogle, handleGithub, profilePhoto } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
+  const [error, setError] = useState("");
 
   const from = location.state?.from?.pathname || "/";
 
@@ -21,9 +22,9 @@ const Login = () => {
       .then((result) => {
         const loggedUser = result.user;
         navigate(from, { replace: true });
-        console.log(loggedUser);
+        setError("");
       })
-      .catch((error) => console.log(error));
+      .catch((error) => setError(error.message));
     profilePhoto();
   };
 
@@ -62,6 +63,7 @@ const Login = () => {
           <Form.Label>Password</Form.Label>
           <Form.Control type="password" name="password" required placeholder="Password" />
         </Form.Group>
+        <p>{error}</p>
         <Button variant="primary" type="submit">
           Login
         </Button>

@@ -2,8 +2,9 @@ import React, { useContext } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+
 const Login = () => {
-  const { loginUser } = useContext(AuthContext);
+  const { loginUser, handleGoogle, handleGithub, profilePhoto } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -23,6 +24,23 @@ const Login = () => {
         console.log(loggedUser);
       })
       .catch((error) => console.log(error));
+
+    handleGoogle()
+      .then((result) => {
+        const user = result.user;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    handleGithub()
+      .then((result) => {
+        const user = result.user;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    profilePhoto();
   };
 
   return (
@@ -46,6 +64,12 @@ const Login = () => {
           Don't Have an Account? Please <Link to="/register">Register</Link>
         </Form.Text>
       </Form>
+      <div className="mt-4">
+        <Button className="me-3" onClick={handleGoogle}>
+          Login with Google
+        </Button>
+        <Button onClick={handleGithub}>Login with Github</Button>
+      </div>
     </Container>
   );
 };

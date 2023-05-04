@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, handleGoogle, handleGithub } = useContext(AuthContext);
 
   const handleRegister = (event) => {
     event.preventDefault();
@@ -21,6 +21,15 @@ const Register = () => {
         console.log(createdUser);
       })
       .catch((error) => console.log(error));
+
+    handleGithub()
+      .then((result) => {
+        const user = result.user;
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -58,6 +67,12 @@ const Register = () => {
           Already Have an Account? Please <Link to="/login">Login</Link>
         </Form.Text>
       </Form>
+      <div className="mt-4">
+        <Button className="me-3" onClick={handleGoogle}>
+          Login with Google
+        </Button>
+        <Button onClick={handleGithub}>Login with Github</Button>
+      </div>
     </Container>
   );
 };

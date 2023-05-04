@@ -48,7 +48,7 @@ const router = createBrowserRouter([
             <Recipes></Recipes>
           </PrivateRoute>
         ),
-        loader: ({ params }) => fetch(`http://localhost:5000/recipe/${params.id}`),
+        loader: ({ params }) => fetch(`https://foodify-robiul1hossen.vercel.app/recipe/${params.id}`),
       },
     ],
   },

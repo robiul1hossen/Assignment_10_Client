@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { FaUserCircle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 const HeaderMenu = () => {
@@ -13,6 +13,14 @@ const HeaderMenu = () => {
       .catch((error) => console.log(error));
   };
 
+  const navLinkStyle = ({ isActive }) => {
+    return {
+      fontWeight: isActive ? "900" : "normal",
+      textDecoration: isActive ? "none" : "underline",
+      color: isActive ? "gray" : "white",
+    };
+  };
+
   return (
     <Navbar collapseOnSelect expand="lg" bg="black" variant="black" className=" sticky-top mt-2">
       <Container className="">
@@ -20,20 +28,21 @@ const HeaderMenu = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Link className="ms-5 text-white text-decoration-none fw-semibold" to="/">
+            <NavLink style={navLinkStyle} className="ms-5  " to="/">
               Home
-            </Link>
-            <Link className="ms-3 text-white text-decoration-none fw-semibold" to="blogs">
+            </NavLink>
+            <NavLink style={navLinkStyle} className="ms-3 " to="blogs">
               Blog
-            </Link>
+            </NavLink>
           </Nav>
 
-          <span className="me-3">
-            {user ? user.displayName : <>{<FaUserCircle className="fs-1 text-white"></FaUserCircle>}</>}
-          </span>
+          <span className="me-3">{user ? user.displayName : <></>}</span>
           <span>
             {user ? (
-              <Button onClick={handleLogout}>Logout</Button>
+              <>
+                {<FaUserCircle className="fs-1 text-white"></FaUserCircle>}
+                <Button onClick={handleLogout}>Logout</Button>
+              </>
             ) : (
               <Link to="/login">
                 <Button>Login</Button>

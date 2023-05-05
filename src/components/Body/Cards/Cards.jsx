@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import SingleCard from "./SingleCard";
 import "./cards.css";
+import Video from "../../Video/Video";
 
 const Cards = () => {
   const [cards, setCards] = useState([]);
@@ -12,10 +13,13 @@ const Cards = () => {
   }, []);
 
   return (
-    <div className="cardDiv">
-      {cards.map((card) => (
-        <SingleCard key={card.id} card={card}></SingleCard>
-      ))}
+    <div>
+      <div className="cardDiv">
+        {cards.map((card) => (
+          <SingleCard key={card.id} card={card}></SingleCard>
+        ))}
+      </div>
+      <Video></Video>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import { FaThumbsUp } from "react-icons/fa";
+import LazyLoad from "react-lazyload";
 import { Link } from "react-router-dom";
 
 const SingleCard = ({ card }) => {
@@ -8,7 +9,9 @@ const SingleCard = ({ card }) => {
   return (
     <Container>
       <Card className="my-5">
-        <Card.Img variant="top" src={image_url} />
+        <LazyLoad>
+          <Card.Img variant="top" src={image_url} />
+        </LazyLoad>
         <Card.Body>
           <Card.Title>Chef Name : {name}</Card.Title>
           <h5>{experience} Years of Experience</h5>

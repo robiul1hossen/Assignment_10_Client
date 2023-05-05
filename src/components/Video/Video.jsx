@@ -3,7 +3,9 @@ import React from "react";
 const Video = () => {
   return (
     <div>
-      <h2 className="text-center text-secondary mt-5 mb-3">Here you can get all our famous recipe videos</h2>
+      <h2 className="text-center text-secondary mt-5 mb-3">
+        Here you can get all our <span className="text-warning">Famous</span> recipe videos
+      </h2>
       <p className="text-center text-muted  mb-3">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem <br /> perspiciatis quia
         cupiditate voluptatum repudiandae officia.

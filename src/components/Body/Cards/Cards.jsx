@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import SingleCard from "./SingleCard";
 import "./cards.css";
 import Video from "../../Video/Video";
+import ClientsWord from "../../ClientsWord/ClientsWord";
 
 const Cards = () => {
   const [cards, setCards] = useState([]);
@@ -13,12 +14,23 @@ const Cards = () => {
   }, []);
 
   return (
-    <div>
+    <div className="mt-5">
+      <div className="mt-5">
+        <h2 style={{ marginTop: "150px" }} className="text-center text-secondary  mb-3">
+          All our <span className="text-warning">Famous</span> and{" "}
+          <span className="text-warning">Experienced</span> chef here
+        </h2>
+        <p className="text-center text-muted  mb-3">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem <br /> perspiciatis quia
+          cupiditate voluptatum repudiandae officia.
+        </p>
+      </div>
       <div className="cardDiv">
         {cards.map((card) => (
           <SingleCard key={card.id} card={card}></SingleCard>
         ))}
       </div>
+      <ClientsWord></ClientsWord>
       <Video></Video>
     </div>
   );

@@ -9,11 +9,21 @@ const SingleCard = ({ card }) => {
   return (
     <Container>
       <Card className="my-5">
-        <LazyLoad>
+        <LazyLoad
+          height={200}
+          offset={100}
+          placeholder={
+            <img
+              className="w-25"
+              src="https://i.ibb.co/QFQ8kQ0/blur-hospital-clinic-interior.jpg"
+              alt="Loading..."
+            />
+          }
+        >
           <Card.Img variant="top" src={image_url} />
         </LazyLoad>
         <Card.Body>
-          <Card.Title>Chef Name : {name}</Card.Title>
+          <Card.Title>Name : {name}</Card.Title>
           <h5>{experience} Years of Experience</h5>
           <Card.Text>
             Some quick example text to build on the card title and make up the bulk of the card's content.

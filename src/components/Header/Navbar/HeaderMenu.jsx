@@ -27,10 +27,10 @@ const HeaderMenu = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <NavLink style={navLinkStyle} className="ms-5  " to="/">
+            <NavLink style={navLinkStyle} className="ms-lg-5  " to="/">
               Home
             </NavLink>
-            <NavLink style={navLinkStyle} className="ms-3 " to="/blogs">
+            <NavLink style={navLinkStyle} className="ms-lg-3 " to="/blogs">
               Blog
             </NavLink>
           </Nav>

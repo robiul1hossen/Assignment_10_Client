@@ -24,35 +24,47 @@ const ClientsWord = () => {
       </div>
       <Carousel>
         <Carousel.Item>
-          <div className="d-flex gap-4">
+          <div className="d-lg-flex gap-4">
             <p style={{ fontSize: "24px", lineHeight: "1.5", color: "#111" }}>
               “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
               labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
               maecenas accumsan lacus vel facilisis.”
               <p className="fs-2 mt-4">David Adam</p>
             </p>
-            <img className="d-block w-50" src=" https://i.ibb.co/10QWDs5/download.png" alt="First slide" />
+            <img
+              className="d-block w-lg-50 w-75"
+              src=" https://i.ibb.co/10QWDs5/download.png"
+              alt="First slide"
+            />
           </div>
         </Carousel.Item>
         <Carousel.Item>
-          <div className="d-flex gap-4">
+          <div className="d-lg-flex gap-4">
             <p style={{ fontSize: "24px", lineHeight: "1.5", color: "#111" }}>
               “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tincidunt sapien sit amet nibh
               consequat, a consequat arcu venenatis. Vivamus eget libero ut ipsum aliquam laoreet. Nullam vel
               nisi ut augue feugiat rhoncus. ”<p className="fs-2 mt-4">Sohn Smith</p>
             </p>
-            <img className="d-block w-50" src=" https://i.ibb.co/THxHgRj/choose.png" alt="Second slide" />
+            <img
+              className="d-block w-lg-50 w-75"
+              src=" https://i.ibb.co/THxHgRj/choose.png"
+              alt="Second slide"
+            />
           </div>
         </Carousel.Item>
         <Carousel.Item>
-          <div className="d-flex gap-4">
+          <div className="d-lg-flex gap-4">
             <p style={{ fontSize: "24px", lineHeight: "1.5", color: "#111" }}>
               “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sollicitudin pharetra felis
               nec rhoncus. Nam et varius magna, sit amet scelerisque mi. In sit amet eros vel risus porttitor
               convallis. Curabitur in massa in magna posuere viverra. Sed convallis justo eu ”
               <p className="fs-2 mt-4">Christopher Nolan</p>
             </p>
-            <img className="d-block w-50" src=" https://i.ibb.co/whkZ5Pb/image6.png" alt="Third slide" />
+            <img
+              className="d-block w-lg-50 w-75"
+              src=" https://i.ibb.co/whkZ5Pb/image6.png"
+              alt="Third slide"
+            />
           </div>
         </Carousel.Item>
       </Carousel>

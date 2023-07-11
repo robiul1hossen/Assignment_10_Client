@@ -1,4 +1,5 @@
 import React from "react";
+import Contact from "../Body/Cards/Contact/Contact";
 
 const Video = () => {
   return (
@@ -153,6 +154,7 @@ const Video = () => {
           </div>
         </div>
       </div>
+      <Contact></Contact>
     </div>
   );
 };

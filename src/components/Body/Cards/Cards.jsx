@@ -3,6 +3,7 @@ import SingleCard from "./SingleCard";
 import "./cards.css";
 import Video from "../../Video/Video";
 import ClientsWord from "../../ClientsWord/ClientsWord";
+import BestFood from "./BestFood/BestFood";
 
 const Cards = () => {
   const [cards, setCards] = useState([]);
@@ -30,6 +31,7 @@ const Cards = () => {
           <SingleCard key={card.id} card={card}></SingleCard>
         ))}
       </div>
+      <BestFood></BestFood>
       <ClientsWord></ClientsWord>
       <Video></Video>
     </div>

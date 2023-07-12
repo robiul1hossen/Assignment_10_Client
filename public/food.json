@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "recipe": "Kung Pao Chicken",
+    "chef": "Li Wei",
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis obcaecati saepe, consequatur quibusdam autem nobis, a, hic esse eligendi reiciendis aspernatur dolorem amet vitae dolores!",
+    "image": "https://i.ibb.co/BywgkT1/fowl-stewed-with-soy-sauce-chicken-thigh.jpg"
+  },
+  {
+    "id": 2,
+    "recipe": "Dumplings",
+    "chef": "Wang Chen",
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis obcaecati saepe, consequatur quibusdam autem nobis, a, hic esse eligendi reiciendis aspernatur dolorem amet vitae dolores!",
+    "image": "https://i.ibb.co/Rb9BGJs/chinese-jiaozi-new-year-food.jpg"
+  },
+  {
+    "id": 3,
+    "recipe": "Peking Duck",
+    "chef": "Zhang Wei",
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis obcaecati saepe, consequatur quibusdam autem nobis, a, hic esse eligendi reiciendis aspernatur dolorem amet vitae dolores!",
+    "image": "https://i.ibb.co/nnjw0D7/homemade-kung-pao-chicken-with-peppers-vegetables-chinese-food-stir-fry.jpg"
+  },
+  {
+    "id": 4,
+    "recipe": "Hot and Sour Soup",
+    "chef": "Liu Mei",
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis obcaecati saepe, consequatur quibusdam autem nobis, a, hic esse eligendi reiciendis aspernatur dolorem amet vitae dolores!",
+    "image": "https://i.ibb.co/Zxb1FRF/tomato-soup-with-paprika-lemon-slices.jpg"
+  },
+  {
+    "id": 5,
+    "recipe": "Mapo Tofu",
+    "chef": "Chen Jie",
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis obcaecati saepe, consequatur quibusdam autem nobis, a, hic esse eligendi reiciendis aspernatur dolorem amet vitae dolores!",
+    "image": "https://i.ibb.co/Qb0jwMn/tofu-made-from-soybeans-food-nutrition-concept.jpg"
+  }
+]
